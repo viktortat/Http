@@ -1,6 +1,12 @@
 {
     "name": "josh-hornby/http",
     "description": "A wrapper around the Guzzle Client API.",
+    "keywords": [
+        "http",
+        "request",
+        "laravel"
+    ],
+    "license": "MIT",
     "authors": [
         {
             "name": "Josh Hornby",
@@ -10,7 +16,7 @@
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.1.*",
-        "guzzlehttp/guzzle": "4.*"
+        "guzzlehttp/guzzle": "~4.*"
     },
     "autoload": {
         "psr-0": {
