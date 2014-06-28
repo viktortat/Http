@@ -9,7 +9,7 @@ Pull this package in through Composer.
 ```js
 {
     "require": {
-        "josh-hornby/http": "dev-master"
+        "josh-hornby/http": "0.1.*"
     }
 }
 ```
@@ -32,5 +32,22 @@ And as this is a facade, add this to the ***aliases*** array
 HTTP::get('http://myrequest.com');
 ```
 
+```php
+HTTP::post('http://myrequest.com');
+```
+
+```php
+HTTP::put('http://myrequest.com');
+```
+
+```php
+HTTP::delete('http://myrequest.com');
+```
+
+```php
+HTTP::head('http://myrequest.com');
+```
+
 That's all you need to do to make a get request. The package will check if it returns the correct status code and present you with a nice JSON array. Simple!
+
 
