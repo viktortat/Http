@@ -9,7 +9,7 @@ Pull this package in through Composer.
 ```js
 {
     "require": {
-        "josh-hornby/http": "0.2.*"
+        "josh-hornby/http": "0.3.*"
     }
 }
 ```
@@ -23,31 +23,36 @@ You will also need to add just two things to your ```config/app.php``` file, fir
 And as this is a facade, add this to the ***aliases*** array
 
 ```php
-'HTTP' => 'JoshHornby\Http\HttpCore',
+'Http' => 'JoshHornby\Http\HttpCore'
 ```
 
 ## Usage
 
 ```php
-HTTP::get('http://myrequest.com');
+Http::get('http://myrequest.com');
 ```
 
 ```php
-HTTP::post('http://myrequest.com', ['postKey' => 'postValue' ]);
+Http::post('http://myrequest.com', ['postKey' => 'postValue' ]);
 ```
 
 ```php
-HTTP::put('http://myrequest.com', ['postKey' => 'postValue' ]);
+Http::put('http://myrequest.com', ['postKey' => 'postValue' ]);
 ```
 
 ```php
-HTTP::delete('http://myrequest.com');
+Http::delete('http://myrequest.com');
 ```
 
 ```php
-HTTP::head('http://myrequest.com');
+Http::head('http://myrequest.com');
 ```
 
-That's all you need to do to make a get request. The package will check if it returns the correct status code and present you with a nice JSON array. Simple!
+The package will check if it returns the correct status code (200 or 201) and present you with a nice JSON array. Simple!
+
+## Todo
+
+- Unit testing
+- Better header handling
 
 

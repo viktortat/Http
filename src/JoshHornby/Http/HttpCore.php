@@ -29,7 +29,7 @@ class HttpCore
     {
         $response = $this->client->get(strtolower($request));
 
-        if ($response->getStatusCode() == '200') {
+        if ($response->getStatusCode() == '200' OR '201') {
             return $response->json();
         }
 
@@ -48,7 +48,7 @@ class HttpCore
 
         $response = $request->send();
 
-        if ($response->getStatusCode() == '200') {
+        if ($response->getStatusCode() == '200' OR '201') {
             return $response->json();
         }
 
@@ -67,7 +67,7 @@ class HttpCore
 
         $response = $request->send();
 
-        if ($response->getStatusCode() == '200') {
+        if ($response->getStatusCode() == '200' OR '201') {
             return $response->json();
         }
 
