@@ -9,7 +9,7 @@ Pull this package in through Composer.
 ```js
 {
     "require": {
-        "josh-hornby/http": "0.1.*"
+        "josh-hornby/http": "0.2.*"
     }
 }
 ```
@@ -17,7 +17,7 @@ Pull this package in through Composer.
 You will also need to add just two things to your ```config/app.php``` file, first add this to your ***providers*** array
 
 ```php
-JoshHornby\Http\HttpServiceProvider
+'JoshHornby\Http\HttpServiceProvider'
 ```
 
 And as this is a facade, add this to the ***aliases*** array
