@@ -33,11 +33,11 @@ HTTP::get('http://myrequest.com');
 ```
 
 ```php
-HTTP::post('http://myrequest.com');
+HTTP::post('http://myrequest.com', ['postKey' => 'postValue' ]);
 ```
 
 ```php
-HTTP::put('http://myrequest.com');
+HTTP::put('http://myrequest.com', ['postKey' => 'postValue' ]);
 ```
 
 ```php

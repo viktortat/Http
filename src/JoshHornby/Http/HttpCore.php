@@ -1,95 +1,113 @@
 <?php namespace JoshHornby\Http;
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as Client;
 use Illuminate\Http\Request;
 use SmokeSpots\HTTP\Exceptions\HttpRequestNotFound;
 
-class HttpCore {
-
+class HttpCore
+{
 
     /**
-     * @param $request
-     * @return mixed
-     * @throws \SmokeSpots\HTTP\Exceptions\HttpRequestNotFound
+     * @var \GuzzleHttp\Client
      */
-    public static function get($request)
+    protected $client;
+
+    /**
+     * @param Client $client
+     */
+    function __construct(Client $client)
     {
-        $client = new Client();
-        $response = $client->get(strtolower($request));
-
-        if ($response->getStatusCode() == '200') {
-            return $response->json();
-        }
-
-        throw new HttpRequestNotFound($response->getStatusCode().' status code returned');
+        $this->client = $client;
     }
-    
+
     /**
      * @param $request
      * @return mixed
      * @throws \SmokeSpots\HTTP\Exceptions\HttpRequestNotFound
      */
-    public static function post($request)
+    public function get($request)
     {
-        $client = new Client();
-        $response = $client->post(strtolower($request));
+        $response = $this->client->get(strtolower($request));
 
         if ($response->getStatusCode() == '200') {
             return $response->json();
         }
 
-        throw new HttpRequestNotFound($response->getStatusCode().' status code returned');
+        throw new HttpRequestNotFound($response->getStatusCode() . ' status code returned');
     }
-    
+
     /**
      * @param $request
+     * @param array $data
      * @return mixed
      * @throws \SmokeSpots\HTTP\Exceptions\HttpRequestNotFound
      */
-    public static function put($request)
+    public function post($request, array $data)
     {
-        $client = new Client();
-        $response = $client->put(strtolower($request));
+        $request = $this->client->post(strtolower($request), [], $data);
+
+        $response = $request->send();
 
         if ($response->getStatusCode() == '200') {
             return $response->json();
         }
 
-        throw new HttpRequestNotFound($response->getStatusCode().' status code returned');
+        throw new HttpRequestNotFound($response->getStatusCode() . ' status code returned');
     }
-    
+
     /**
      * @param $request
+     * @param array $data
      * @return mixed
      * @throws \SmokeSpots\HTTP\Exceptions\HttpRequestNotFound
      */
-    public static function delete($request)
+    public function put($request, array $data)
     {
-        $client = new Client();
-        $response = $client->delete(strtolower($request));
+        $request = $this->client->put(strtolower($request), [], $data);
+
+        $response = $request->send();
 
         if ($response->getStatusCode() == '200') {
             return $response->json();
         }
 
-        throw new HttpRequestNotFound($response->getStatusCode().' status code returned');
+        throw new HttpRequestNotFound($response->getStatusCode() . ' status code returned');
     }
-    
+
     /**
      * @param $request
      * @return mixed
      * @throws \SmokeSpots\HTTP\Exceptions\HttpRequestNotFound
      */
-    public static function head($request)
+    public function delete($request)
     {
-        $client = new Client();
-        $response = $client->head(strtolower($request));
+        $request = $this->client->delete(strtolower($request));
+
+        $response = $request->send();
 
         if ($response->getStatusCode() == '200') {
             return $response->json();
         }
 
-        throw new HttpRequestNotFound($response->getStatusCode().' status code returned');
+        throw new HttpRequestNotFound($response->getStatusCode() . ' status code returned');
+    }
+
+    /**
+     * @param $request
+     * @return mixed
+     * @throws \SmokeSpots\HTTP\Exceptions\HttpRequestNotFound
+     */
+    public function head($request)
+    {
+        $request = $this->client->head(strtolower($request));
+
+        $response = $request->send();
+
+        if ($response->getStatusCode() == '200') {
+            return $response->json();
+        }
+
+        throw new HttpRequestNotFound($response->getStatusCode() . ' status code returned');
     }
 
 } 
