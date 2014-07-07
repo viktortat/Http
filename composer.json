@@ -26,5 +26,5 @@
         "psr-0": {
             "JoshHornby\\Http": "src/"
         }
-    },
+    }
 }
