@@ -9,7 +9,7 @@ Pull this package in through Composer.
 ```js
 {
     "require": {
-        "josh-hornby/http": "0.3.*"
+        "josh-hornby/http": "0.4.*"
     }
 }
 ```
