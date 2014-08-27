@@ -1,11 +1,11 @@
 <?php 
 
-class HttpTest extends TestCase {
+class HttpTest extends phpunit_framework_testcase {
 
     /** @test * */
     public function it_should_allow_you_to_send_http_requests()
     {
-        Http::shouldReceive('get')->once()->andReturn('foo');
+        $request = new Request();
     }
 
 } 

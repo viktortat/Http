@@ -9,7 +9,7 @@ Pull this package in through Composer.
 ```js
 {
     "require": {
-        "josh-hornby/http": "0.3.*"
+        "josh-hornby/http": "0.4.*"
     }
 }
 ```
@@ -54,5 +54,4 @@ The package will check if it returns the correct status code (200 or 201) and pr
 
 - Unit testing
 - Better header handling
-
 

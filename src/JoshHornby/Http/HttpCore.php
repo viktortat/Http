@@ -2,14 +2,14 @@
 
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
-use SmokeSpots\HTTP\Exceptions\HttpRequestNotFound;
+use JoshHornby\Http\Exceptions\HttpRequestNotFound;
 
 class HttpCore
 {
     /**
      * @param $request
+     * @throws Exceptions\HttpRequestNotFound
      * @return mixed
-     * @throws \SmokeSpots\HTTP\Exceptions\HttpRequestNotFound
      */
     public static function get($request)
     {
@@ -27,8 +27,8 @@ class HttpCore
     /**
      * @param $request
      * @param array $data
+     * @throws Exceptions\HttpRequestNotFound
      * @return mixed
-     * @throws \SmokeSpots\HTTP\Exceptions\HttpRequestNotFound
      */
     public static function post($request, array $data)
     {
@@ -48,8 +48,8 @@ class HttpCore
     /**
      * @param $request
      * @param array $data
+     * @throws Exceptions\HttpRequestNotFound
      * @return mixed
-     * @throws \SmokeSpots\HTTP\Exceptions\HttpRequestNotFound
      */
     public static function put($request, array $data)
     {
@@ -68,8 +68,8 @@ class HttpCore
 
     /**
      * @param $request
+     * @throws Exceptions\HttpRequestNotFound
      * @return mixed
-     * @throws \SmokeSpots\HTTP\Exceptions\HttpRequestNotFound
      */
     public static function delete($request)
     {
@@ -88,8 +88,8 @@ class HttpCore
 
     /**
      * @param $request
+     * @throws Exceptions\HttpRequestNotFound
      * @return mixed
-     * @throws \SmokeSpots\HTTP\Exceptions\HttpRequestNotFound
      */
     public static function head($request)
     {
