@@ -11,11 +11,11 @@ class HttpCore
      * @throws Exceptions\HttpRequestNotFound
      * @return mixed
      */
-    public static function get($request)
+    public static function get($request, $options = [])
     {
         $client = new Client();
 
-        $response = $client->get(strtolower($request));
+        $response = $client->get(strtolower($request),$options);
 
         if ($response->getStatusCode() == '200' OR '201') {
             return $response->json();
