@@ -15,7 +15,7 @@ class HttpCore
     {
         $client = new Client();
 
-        $response = $client->get(strtolower($request),$options);
+        $response = $client->get($request, $options);
 
         if ($response->getStatusCode() == '200' OR '201') {
             return $response->json();
@@ -34,7 +34,7 @@ class HttpCore
     {
         $client = new Client();
 
-        $request = $client->post(strtolower($request), [], $data);
+        $request = $client->post($request, [], $data);
 
         $response = $request->send();
 
@@ -55,7 +55,7 @@ class HttpCore
     {
         $client = new Client();
 
-        $request = $client->put(strtolower($request), [], $data);
+        $request = $client->put($request, [], $data);
 
         $response = $request->send();
 
@@ -75,7 +75,7 @@ class HttpCore
     {
         $client = new Client();
 
-        $request = $client->delete(strtolower($request));
+        $request = $client->delete($request);
 
         $response = $request->send();
 
@@ -95,7 +95,7 @@ class HttpCore
     {
         $client = new Client();
 
-        $request = $client->head(strtolower($request));
+        $request = $client->head($request);
 
         $response = $request->send();
 
