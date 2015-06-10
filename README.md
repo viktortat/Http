@@ -7,11 +7,7 @@ I personally find my self making lots of external API requests using Laravel. So
 Pull this package in through Composer.
 
 ```js
-{
-    "require": {
-        "josh-hornby/http": "0.4.*"
-    }
-}
+composer require josh-hornby/http
 ```
 
 You will also need to add just two things to your ```config/app.php``` file, first add this to your ***providers*** array
