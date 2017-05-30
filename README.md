@@ -1,3 +1,5 @@
+# THIS REPO IS DEPRECATED!
+
 # Simple HTTP Requests
 
 I personally find my self making lots of external API requests using Laravel. So I wrote a simple wrapper around the Guzzle API to make my life a little easier.
